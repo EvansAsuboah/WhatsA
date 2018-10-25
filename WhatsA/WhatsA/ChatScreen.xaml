@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WhatsA.ChatScreen"
+             Title="WhatsApp">
+    
+    
+    <ScrollView>
+        <AbsoluteLayout x:Name="Stack">
+            <ListView Grid.Row="0" ItemsSource="{Binding TextContainer}" x:Name="ListView" SeparatorVisibility="None" AbsoluteLayout.LayoutBounds="0,0,1,Autosize"  AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="10">
+                                <Label Text="{Binding Text}" YAlign="Center" Font="Large" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                    </ListView.ItemTemplate>
+                    </ListView>
+
+
+                <Grid AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Entry x:Name="TypeMessage" Placeholder="Type Message" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"
+                       Text="{Binding LastMessage,Mode=TwoWay}" HeightRequest="60" WidthRequest="300" Grid.Row="0" Grid.Column="0"/>
+                <Button Image="send_button.png" Clicked="Button_Clicked" VerticalOptions="FillAndExpand" Grid.Column="1"/>
+                    
+                    
+            </Grid>
+                     
+
+        </AbsoluteLayout>
+        
+    </ScrollView>
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="New_Group" Text="New Group" Priority="0" Order="Secondary" Clicked="New_Group_Clicked"/>
+        <ToolbarItem x:Name="New_Broadcast" Text="New Broadcast" Priority="1" Order="Secondary" Clicked="New_Broadcast_Clicked"/>
+        <ToolbarItem x:Name="WhatsApp_Web" Text="WhatsApp Web" Priority="2" Order="Secondary" Clicked="WhatsApp_Web_Clicked"/>
+        <ToolbarItem x:Name="Starred_Messages" Text="Starred Messages" Priority="3" Order="Secondary" Clicked="Starred_Messages_Clicked"/>
+        <ToolbarItem x:Name="Settings" Text="Settings" Priority="4" Order="Secondary" Clicked="Settings_Clicked"/>
+
+        <ToolbarItem x:Name="Search" Icon="Search.png" Priority="5" Clicked="Search_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+
+
+
+
+</ContentPage>

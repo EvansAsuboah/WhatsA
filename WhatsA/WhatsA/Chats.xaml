@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WhatsA.Chats"
+             Title="CHAT">
+
+    <StackLayout Orientation="Vertical">
+        <SearchBar x:Name="ColorSearch"
+                       SearchButtonPressed="ColorSearch_SearchButtonPressed"
+                       TextChanged="ColorSearch_TextChanged"/>
+        <ListView x:Name="Contacts"
+                      HasUnevenRows="True"
+                      ItemSelected="Contacts_ItemSelected"
+                      SelectedItem="{Binding SelectedItem}">
+
+        </ListView>
+    </StackLayout>
+
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="New_Group" Text="New Group" Priority="0" Order="Secondary" Clicked="New_Group_Clicked"/>
+        <ToolbarItem x:Name="New_Broadcast" Text="New Broadcast" Priority="1" Order="Secondary" Clicked="New_Broadcast_Clicked"/>
+        <ToolbarItem x:Name="WhatsApp_Web" Text="WhatsApp Web" Priority="2" Order="Secondary" Clicked="WhatsApp_Web_Clicked"/>
+        <ToolbarItem x:Name="Starred_Messages" Text="Starred Messages" Priority="3" Order="Secondary" Clicked="Starred_Messages_Clicked"/>
+        <ToolbarItem x:Name="Settings" Text="Settings" Priority="4" Order="Secondary" Clicked="Settings_Clicked"/>
+
+        <ToolbarItem x:Name="Search" Icon="Search.png" Priority="5" Clicked="Search_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+
+
+
+</ContentPage>
